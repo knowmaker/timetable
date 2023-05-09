@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="dform">
+    <h3>ТОП учителей по нагрузке</h3>
+  <%= form_tag("/pages/workload", :method => "get") do %>
+    <%= text_field_tag :subj_name, nil, class: 'input-field', placeholder: 'Введите предмет' %>
+    <%= number_field_tag :top, nil, class: 'input-field', placeholder: 'Количество ТОП' %>
+    <%= submit_tag "Показать ТОП", class: 'submit-button' %>
+  <% end %>
+  </div>
+  <div  style="overflow-y: auto; max-height: 650px; ">
+  <% if !@workload_ans.nil? %>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th></th>
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Отчество</th>
+          <th>Кол-во уроков</th>
+        </tr>
+        <% @workload_ans.length.times do |i| %>
+          <tr>
+            <td><%=i+1 %></td>
+            <td><%=@workload_ans[i][0] %></td>
+            <td><%=@workload_ans[i][1] %></td>
+            <td><%=@workload_ans[i][2] %></td>
+            <td><%=@workload_ans[i][3] %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <%end %>
+  </div>
+  <a href="<%= root_path %>" style="width: 100px">На главную</a>
+</div>

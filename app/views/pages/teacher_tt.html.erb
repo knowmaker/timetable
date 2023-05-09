@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="dform">
+    <h3>Расписание уроков учителя</h3>
+  <%= form_tag("/pages/teacher_tt", :method => "get") do %>
+    <%= text_field_tag :last_name, nil, class: 'input-field', placeholder: 'Введите фамилию' %>
+    <%= text_field_tag :first_name, nil, class: 'input-field', placeholder: 'Введите имя' %>
+    <%= text_field_tag :patronymic, nil, class: 'input-field', placeholder: 'Введите отчество' %>
+    <%= submit_tag "Показать расписание", class: 'submit-button' %>
+  <% end %>
+  </div>
+  <div  style="overflow-y: auto; max-height: 650px; ">
+  <%item = 0 %>
+  <% if !@teacher_tt_ans.nil? %>
+    <% @id_ct[0][0].to_i.times do %>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Понедельник</th>
+          <th>Вторник</th>
+          <th>Среда</th>
+          <th>Четверг</th>
+          <th>Пятница</th>
+        </tr>
+        <tr>
+          <td><b><%=@teacher_tt_ans[item+0][3] %></b><br><%=@teacher_tt_ans[item+0][5] %><br>Кабинет: <%=@teacher_tt_ans[item+0][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+1][3] %></b><br><%=@teacher_tt_ans[item+1][5] %><br>Кабинет: <%=@teacher_tt_ans[item+1][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+2][3] %></b><br><%=@teacher_tt_ans[item+2][5] %><br>Кабинет: <%=@teacher_tt_ans[item+2][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+3][3] %></b><br><%=@teacher_tt_ans[item+3][5] %><br>Кабинет: <%=@teacher_tt_ans[item+3][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+4][3] %></b><br><%=@teacher_tt_ans[item+4][5] %><br>Кабинет: <%=@teacher_tt_ans[item+4][4] %></td>
+        </tr>
+        <tr>
+          <td><b><%=@teacher_tt_ans[item+5][3] %></b><br><%=@teacher_tt_ans[item+5][5] %><br>Кабинет: <%=@teacher_tt_ans[item+5][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+6][3] %></b><br><%=@teacher_tt_ans[item+6][5] %><br>Кабинет: <%=@teacher_tt_ans[item+6][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+7][3] %></b><br><%=@teacher_tt_ans[item+7][5] %><br>Кабинет: <%=@teacher_tt_ans[item+7][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+8][3] %></b><br><%=@teacher_tt_ans[item+8][5] %><br>Кабинет: <%=@teacher_tt_ans[item+8][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+9][3] %></b><br><%=@teacher_tt_ans[item+9][5] %><br>Кабинет: <%=@teacher_tt_ans[item+9][4] %></td>
+        </tr>
+        <tr>
+          <td><b><%=@teacher_tt_ans[item+10][3] %></b><br><%=@teacher_tt_ans[item+10][5] %><br>Кабинет: <%=@teacher_tt_ans[item+10][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+11][3] %></b><br><%=@teacher_tt_ans[item+11][5] %><br>Кабинет: <%=@teacher_tt_ans[item+11][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+12][3] %></b><br><%=@teacher_tt_ans[item+12][5] %><br>Кабинет: <%=@teacher_tt_ans[item+12][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+13][3] %></b><br><%=@teacher_tt_ans[item+13][5] %><br>Кабинет: <%=@teacher_tt_ans[item+13][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+14][3] %></b><br><%=@teacher_tt_ans[item+14][5] %><br>Кабинет: <%=@teacher_tt_ans[item+14][4] %></td>
+        </tr>
+        <tr>
+          <td><b><%=@teacher_tt_ans[item+15][3] %></b><br><%=@teacher_tt_ans[item+15][5] %><br>Кабинет: <%=@teacher_tt_ans[item+15][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+16][3] %></b><br><%=@teacher_tt_ans[item+16][5] %><br>Кабинет: <%=@teacher_tt_ans[item+16][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+17][3] %></b><br><%=@teacher_tt_ans[item+17][5] %><br>Кабинет: <%=@teacher_tt_ans[item+17][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+18][3] %></b><br><%=@teacher_tt_ans[item+18][5] %><br>Кабинет: <%=@teacher_tt_ans[item+18][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+19][3] %></b><br><%=@teacher_tt_ans[item+19][5] %><br>Кабинет: <%=@teacher_tt_ans[item+19][4] %></td>
+        </tr>
+        <tr>
+          <td><b><%=@teacher_tt_ans[item+20][3] %></b><br><%=@teacher_tt_ans[item+20][5] %><br>Кабинет: <%=@teacher_tt_ans[item+20][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+21][3] %></b><br><%=@teacher_tt_ans[item+21][5] %><br>Кабинет: <%=@teacher_tt_ans[item+21][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+22][3] %></b><br><%=@teacher_tt_ans[item+22][5] %><br>Кабинет: <%=@teacher_tt_ans[item+22][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+23][3] %></b><br><%=@teacher_tt_ans[item+23][5] %><br>Кабинет: <%=@teacher_tt_ans[item+23][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+24][3] %></b><br><%=@teacher_tt_ans[item+24][5] %><br>Кабинет: <%=@teacher_tt_ans[item+24][4] %></td>
+        </tr>
+        <tr>
+          <td><b><%=@teacher_tt_ans[item+25][3] %></b><br><%=@teacher_tt_ans[item+25][5] %><br>Кабинет: <%=@teacher_tt_ans[item+25][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+26][3] %></b><br><%=@teacher_tt_ans[item+26][5] %><br>Кабинет: <%=@teacher_tt_ans[item+26][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+27][3] %></b><br><%=@teacher_tt_ans[item+27][5] %><br>Кабинет: <%=@teacher_tt_ans[item+27][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+28][3] %></b><br><%=@teacher_tt_ans[item+28][5] %><br>Кабинет: <%=@teacher_tt_ans[item+28][4] %></td>
+          <td><b><%=@teacher_tt_ans[item+29][3] %></b><br><%=@teacher_tt_ans[item+29][5] %><br>Кабинет: <%=@teacher_tt_ans[item+29][4] %></td>
+        </tr>
+      </table>
+    </div>
+      <% item +=30 %>
+    <%end %>
+  <%end %>
+  </div>
+  <a href="<%= root_path %>" style="width: 100px">На главную</a>
+</div>

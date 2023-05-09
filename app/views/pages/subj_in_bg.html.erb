@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="dform">
+    <h3>Предметы в больших классах</h3>
+  <%= form_tag("/pages/subj_in_bg", :method => "get") do %>
+    <%= number_field_tag :quan, nil, class: 'input-field', placeholder: 'Предельная численность' %>
+    <%= submit_tag "Найти", class: 'submit-button' %>
+  <% end %>
+  </div>
+  <div  style="overflow-y: auto; max-height: 650px; ">
+    <% if !@subj_ans.nil? %>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Класс</th>
+            <th>Численность</th>
+            <th>Предметы</th>
+          </tr>
+          <% @subj_ans.length.times do |i| %>
+            <tr>
+              <td><%=@subj_ans[i][0] %></td>
+              <td><%=@subj_ans[i][1] %></td>
+              <td><%=@subj_ans[i][2] %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    <%end %>
+  </div>
+  <a href="<%= root_path %>" style="width: 100px">На главную</a>
+</div>

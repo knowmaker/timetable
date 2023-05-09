@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.container {
+    background-image: url("https://top-fon.com/uploads/posts/2023-01/1674677132_top-fon-com-p-foni-dlya-shkolnikh-prezentatsii-v-nachaln-174.jpg");
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    height:100vh;
+    width: 100%;
+}
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    margin: 0 0 20px;
+}
+ul {
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+li {
+    display: inline-block;
+    margin: 0 10px;
+    width: calc(90% / 7 - 20px); /* вычисляем ширину элемента li так, чтобы было 7 элементов на одной строке */
+}
+a {
+    display: block;
+    padding: 10px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+a:hover {
+    background-color: #0D47A1;
+}
+
+
+
+.input-field {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 200px;
+}
+.submit-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2196F3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+}
+td {
+    background-color: rgba(6, 139, 82, 0.51);
+    color: white;
+}
+
+.dform {
+    text-align: center;
+}

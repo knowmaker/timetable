@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="dform">
+    <h3>Расписание уроков ученика</h3>
+  <%= form_tag("/pages/pupil_tt", :method => "get") do %>
+    <%= text_field_tag :last_name, nil, class: 'input-field', placeholder: 'Введите фамилию' %>
+    <%= text_field_tag :first_name, nil, class: 'input-field', placeholder: 'Введите имя' %>
+    <%= text_field_tag :patronymic, nil, class: 'input-field', placeholder: 'Введите отчество' %>
+    <%= date_field_tag :birth_date, nil, class: 'input-field', placeholder: 'Введите дату рождения' %>
+    <%= submit_tag "Показать расписание", class: 'submit-button' %>
+  <% end %>
+  </div>
+  <% if !@pupil_tt_ans.nil? %>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>Понедельник</th>
+        <th>Вторник</th>
+        <th>Среда</th>
+        <th>Четверг</th>
+        <th>Пятница</th>
+      </tr>
+      <tr>
+        <td><b><%=@pupil_tt_ans[0][2] %></b><br>Кабинет: <%=@pupil_tt_ans[0][3] %></td>
+        <td><b><%=@pupil_tt_ans[1][2] %></b><br>Кабинет: <%=@pupil_tt_ans[1][3] %></td>
+        <td><b><%=@pupil_tt_ans[2][2] %></b><br>Кабинет: <%=@pupil_tt_ans[2][3] %></td>
+        <td><b><%=@pupil_tt_ans[3][2] %></b><br>Кабинет: <%=@pupil_tt_ans[3][3] %></td>
+        <td><b><%=@pupil_tt_ans[4][2] %></b><br>Кабинет: <%=@pupil_tt_ans[4][3] %></td>
+      </tr>
+      <tr>
+        <td><b><%=@pupil_tt_ans[5][2] %></b><br>Кабинет: <%=@pupil_tt_ans[5][3] %></td>
+        <td><b><%=@pupil_tt_ans[6][2] %></b><br>Кабинет: <%=@pupil_tt_ans[6][3] %></td>
+        <td><b><%=@pupil_tt_ans[7][2] %></b><br>Кабинет: <%=@pupil_tt_ans[7][3] %></td>
+        <td><b><%=@pupil_tt_ans[8][2] %></b><br>Кабинет: <%=@pupil_tt_ans[8][3] %></td>
+        <td><b><%=@pupil_tt_ans[9][2] %></b><br>Кабинет: <%=@pupil_tt_ans[9][3] %></td>
+      </tr>
+      <tr>
+        <td><b><%=@pupil_tt_ans[10][2] %></b><br>Кабинет: <%=@pupil_tt_ans[10][3] %></td>
+        <td><b><%=@pupil_tt_ans[11][2] %></b><br>Кабинет: <%=@pupil_tt_ans[11][3] %></td>
+        <td><b><%=@pupil_tt_ans[12][2] %></b><br>Кабинет: <%=@pupil_tt_ans[12][3] %></td>
+        <td><b><%=@pupil_tt_ans[13][2] %></b><br>Кабинет: <%=@pupil_tt_ans[13][3] %></td>
+        <td><b><%=@pupil_tt_ans[14][2] %></b><br>Кабинет: <%=@pupil_tt_ans[14][3] %></td>
+      </tr>
+      <tr>
+        <td><b><%=@pupil_tt_ans[15][2] %></b><br>Кабинет: <%=@pupil_tt_ans[15][3] %></td>
+        <td><b><%=@pupil_tt_ans[16][2] %></b><br>Кабинет: <%=@pupil_tt_ans[16][3] %></td>
+        <td><b><%=@pupil_tt_ans[17][2] %></b><br>Кабинет: <%=@pupil_tt_ans[17][3] %></td>
+        <td><b><%=@pupil_tt_ans[18][2] %></b><br>Кабинет: <%=@pupil_tt_ans[18][3] %></td>
+        <td><b><%=@pupil_tt_ans[19][2] %></b><br>Кабинет: <%=@pupil_tt_ans[19][3] %></td>
+      </tr>
+      <tr>
+        <td><b><%=@pupil_tt_ans[20][2] %></b><br>Кабинет: <%=@pupil_tt_ans[20][3] %></td>
+        <td><b><%=@pupil_tt_ans[21][2] %></b><br>Кабинет: <%=@pupil_tt_ans[21][3] %></td>
+        <td><b><%=@pupil_tt_ans[22][2] %></b><br>Кабинет: <%=@pupil_tt_ans[22][3] %></td>
+        <td><b><%=@pupil_tt_ans[23][2] %></b><br>Кабинет: <%=@pupil_tt_ans[23][3] %></td>
+        <td><b><%=@pupil_tt_ans[24][2] %></b><br>Кабинет: <%=@pupil_tt_ans[24][3] %></td>
+      </tr>
+      <tr>
+        <td><b><%=@pupil_tt_ans[25][2] %></b><br>Кабинет: <%=@pupil_tt_ans[25][3] %></td>
+        <td><b><%=@pupil_tt_ans[26][2] %></b><br>Кабинет: <%=@pupil_tt_ans[26][3] %></td>
+        <td><b><%=@pupil_tt_ans[27][2] %></b><br>Кабинет: <%=@pupil_tt_ans[27][3] %></td>
+        <td><b><%=@pupil_tt_ans[28][2] %></b><br>Кабинет: <%=@pupil_tt_ans[28][3] %></td>
+        <td><b><%=@pupil_tt_ans[29][2] %></b><br>Кабинет: <%=@pupil_tt_ans[29][3] %></td>
+      </tr>
+    </table>
+  </div>
+    <%end %>
+  <a href="<%= root_path %>" style="width: 100px">На главную</a>
+</div>

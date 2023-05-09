@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="dform">
+    <h3>Перевод в следующий класс</h3>
+  <%= form_tag("/pages/transfer", :method => "get") do %>
+    <%= text_field_tag :last_name, nil, class: 'input-field', placeholder: 'Введите фамилию' %>
+    <%= text_field_tag :first_name, nil, class: 'input-field', placeholder: 'Введите имя' %>
+    <%= text_field_tag :patronymic, nil, class: 'input-field', placeholder: 'Введите отчество' %>
+    <%= text_field_tag :grade, nil, class: 'input-field', placeholder: 'Введите класс' %>
+    <%= submit_tag "Перевести в следующий класс", class: 'submit-button' %>
+  <% end %>
+  </div>
+  <% if !@transfer_ans.nil? %>
+  <div class="table-container">
+  <% if @transfer_ans>0 %>
+      <h2>Ученик переведен в следующий класс</h2>
+      <%else %>
+      <h2>Ученик будет выпущен</h2>
+  <%end %>
+  </div>
+  <%end %>
+  <a href="<%= root_path %>" style="width: 100px">На главную</a>
+</div>

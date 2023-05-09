@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="dform">
+  <h3>Изменение расписания звонков</h3>
+  <%= form_tag("/pages/bells", :method => "get") do %>
+    <%= time_field_tag :start_time, nil, class: 'input-field', placeholder: 'Введите время начала учебы' %>
+    <%= number_field_tag :chill_time, nil, class: 'input-field', placeholder: 'Введите время перемены' %>
+    <%= submit_tag "Изменить звонки", class: 'submit-button' %>
+  <% end %>
+  </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Номер урока</th>
+          <th>Интервал</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><%=@bell_ans[0][1] %>-<%=@bell_ans[0][2] %></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><%=@bell_ans[1][1] %>-<%=@bell_ans[1][2] %></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><%=@bell_ans[2][1] %>-<%=@bell_ans[2][2] %></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><%=@bell_ans[3][1] %>-<%=@bell_ans[3][2] %></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><%=@bell_ans[4][1] %>-<%=@bell_ans[4][2] %></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><%=@bell_ans[5][1] %>-<%=@bell_ans[5][2] %></td>
+        </tr>
+      </table>
+    </div>
+  <a href="<%= root_path %>" style="width: 100px">На главную</a>
+</div>

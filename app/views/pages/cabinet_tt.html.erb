@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="dform">
+    <h3>Расписание уроков в кабинете</h3>
+  <%= form_tag("/pages/cabinet_tt", :method => "get") do %>
+    <%= number_field_tag :cab_num, nil, class: 'input-field', placeholder: 'Введите номер кабинета' %>
+    <%= select_tag :day, options_for_select([ "Понедельник", "Вторник", "Среда", "Четверг", "Пятница" ]), prompt: "Выберите день недели", class: 'input-field' %>
+    <%= submit_tag "Показать расписание", class: 'submit-button' %>
+  <% end %>
+  </div>
+  <% if !@cabinet_tt_ans.nil? %>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Номер урока</th>
+          <th>Предмет</th>
+          <th>Фамилия учителя</th>
+          <th>Имя учителя</th>
+        </tr>
+        <% @cabinet_tt_ans.length.times do |i| %>
+        <tr>
+          <td><%=@cabinet_tt_ans[i][0] %></td>
+          <td><%=@cabinet_tt_ans[i][1] %></td>
+          <td><%=@cabinet_tt_ans[i][2] %></td>
+          <td><%=@cabinet_tt_ans[i][3] %></td>
+        </tr>
+          <% end %>
+      </table>
+    </div>
+  <%end %>
+  <a href="<%= root_path %>" style="width: 100px">На главную</a>
+</div>
